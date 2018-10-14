@@ -1,0 +1,14 @@
+#
+#This is sample code for booting from an iso #file
+#via the Grub2Win g2wisoboot function
+#
+#See the Grub2Win help file advanced topics #section for more information
+#
+     clear
+     set isopath='/** your iso file path **'             # Example '/my.linux.iso'
+     set kernelpath='/** kernel path **'                 # Example '/vmlinuz'
+     set initrdpath='/** initrd path **'                 # Example '/initrd.img'
+     set bootparms='** your linux bootparms **'          # Example 'boot=/ iso-scan/filename='$isopath' noprompt noeject ---'
+#
+     g2wisoboot                                          # Run the g2wisoboot function
+#

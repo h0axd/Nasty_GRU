@@ -1,0 +1,91 @@
+title-text: ""
+message-color: "white"
+message-bg-color: "0, 166, 183"
+desktop-image: "custom.background.png"
+
++ boot_menu {
+   left   = 15%
+   top    = 12%
+   width  = 68%
+   height = 65%
+   item_color          = #32d12e
+   selected_item_color = #ff4646
+   icon_width   = 35%
+   icon_height  = 35%
+   item_height  = 40%
+   item_padding = 5%
+   item_icon_space = 12%
+   item_spacing    = 10%
+   menu_pixmap_style          = "common/static/menubox.trans_*.png"
+}
+
++canvas {
+      left   = 87%
+      top    = 42%
+      width  = 100
+      height = 85
+    + label
+        {
+          left   =  5%
+          text   = "Grub2Win"
+          color  = #727272
+        }
+         + hbox  {
+                   top = 25% left = 12% width = 10% height = 10%
+             + image { file   = "common/colorcustom/digita.png"     }
+             + image { file   = "common/colorcustom/digitpoint.png" }
+             + image { file   = "common/colorcustom/digitb.png"     }
+             + image { file   = "common/colorcustom/digitpoint.png" }
+             + image { file   = "common/colorcustom/digitc.png"     }
+             + image { file   = "common/colorcustom/digitpoint.png" }
+             + image { file   = "common/colorcustom/digitd.png"     }
+    }
+}
+
++canvas {
+      left   = 84%
+      top    = 50%
+      width  = 150
+      height = 80
+    + image { left = 14%  top = 20%   file = "common/colorcustom/image.typeefi32.png"  }
+ }
+
+# Informational message bar at the bottom of the screen.
++ vbox {
+       left   = 20%
+       top    = 80%
+       width  = 80%
+       height = 10%
+   + label {
+      text="Select an item with the arrow keys and press Enter to boot."
+      color  = #727272
+   }
+   + label {
+      text="Press:  'c'  for a grub command line or  'e'  to edit."
+      color  = #727272
+   }
+}
+
++ circular_progress {
+   id = "__timeout__"
+   left   = 85%
+   top    = 65%
+   width  = 110
+   height = 110
+   num_ticks       = 30
+   ticks_disappear = true
+   center_bitmap   = "common/clockfaces/spinner.png"   tick_bitmap = "common/colorcustom/tick.png"
+}
+
++ progress_bar     {
+   id = "__timeout__"
+   left   = 81%
+   top    = 85%
+   width  = 4%
+   height = 5%
+   text = "@TIMEOUT_NOTIFICATION_SHORT@"
+   text_color = #639eb1
+   show_text  = true
+   bar_style = "*"
+   highlight_style = "*"
+}

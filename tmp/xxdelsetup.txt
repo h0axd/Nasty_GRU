@@ -1,0 +1,18 @@
+@echo off
+call :sleeper 2
+cls
+if exist %setupdir%setup.exe                 erase    %setupdir%setup.exe
+if exist %setupdir%grub2win.zip              erase    %setupdir%grub2win.zip
+if exist %setupdir%grub2win.setup.log.txt    erase    %setupdir%grub2win.setup.log.txt
+
+%systemdrive%
+cd \
+echo.
+echo The Grub2Win setup files have been deleted
+call :sleeper 3
+goto 2>nul & del "%~f0"
+
+:sleeper
+set /a seconds = %1 + 1
+ping -n %seconds% 127.0.0.1 >nul 2>&1 
+goto :eof

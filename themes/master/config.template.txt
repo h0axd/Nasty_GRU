@@ -1,0 +1,109 @@
+title-text: ""
+message-color: "white"
+message-bg-color: "0, 166, 183"
+desktop-image: "custom.background.png"                               
+
++ boot_menu {
+   left   = 15%
+   top    = 12%
+   width  = 68%
+   height = 65%
+   item_color          = #*menuitemcolor*                                    ##g2w-replace coltitle  *menuitemcolor*
+   selected_item_color = #*menuselectcolor*                                  ##g2w-replace colselect *menuselectcolor*
+   icon_width   = 35%
+   icon_height  = 35%
+   item_height  = 40%
+   item_padding = 5%
+   item_icon_space = 12%
+   item_spacing    = 10%
+   menu_pixmap_style          = "common/static/menubox.trans_*.png"          ##g2w-include dark      no
+   menu_pixmap_style          = "common/static/menubox.dark_*.png"           ##g2w-include dark      yes
+   selected_item_pixmap_style = "common/static/select_*.png"                 ##g2w-include scrollbar yes
+   scrollbar = true                                                          ##g2w-include scrollbar yes
+   scrollbar_thumb = "common/static/sb_th_*.png"                             ##g2w-include scrollbar yes
+   scrollbar_frame = "common/static/sb_fr_*.png"                             ##g2w-include scrollbar yes 
+} 
+                                                                             ##g2w-include version   yes
++canvas {                                                                    ##g2w-include version   yes
+      left   = 87%                                                           ##g2w-include version   yes
+      top    = 42%                                                           ##g2w-include version   yes
+      width  = 100                                                           ##g2w-include version   yes
+      height = 85                                                            ##g2w-include version   yes
+    + label                                                                  ##g2w-include version   yes
+        {                                                                    ##g2w-include version   yes
+          left   =  5%                                                       ##g2w-include version   yes
+          text   = "Grub2Win"                                                ##g2w-include version   yes
+          color  = #*menutextcolor* ##g2w-replace coltext *menutextcolor*    ##g2w-include version   yes
+        }                                                                    ##g2w-include version   yes
+         + hbox  {                                                           ##g2w-include version   yes
+                   top = 25% left = 12% width = 10% height = 10%             ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digita.png"     }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitpoint.png" }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitb.png"     }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitpoint.png" }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitc.png"     }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitpoint.png" }        ##g2w-include version   yes
+             + image { file   = "common/colorcustom/digitd.png"     }        ##g2w-include version   yes
+    }                                                                        ##g2w-include version   yes
+}                                                                            ##g2w-include version   yes
+                                                                             ##g2w-include bootmode  yes
++canvas {                                                                    ##g2w-include bootmode  yes
+      left   = 84%                                                           ##g2w-include bootmode  yes
+      top    = 50%                                                           ##g2w-include bootmode  yes
+      width  = 150                                                           ##g2w-include bootmode  yes
+      height = 80                                                            ##g2w-include bootmode  yes
+      "*bootmodestring*"                                                     ##g2w-include bootmode  yes
+ }                                                                           ##g2w-include bootmode  yes
+                                                                             ##g2w-include lines     yes
+# Informational message bar at the bottom of the screen.                     ##g2w-include lines     yes
++ vbox {                                                                     ##g2w-include lines     yes
+       left   = 20%                                                          ##g2w-include lines     yes
+       top    = 80%                                                          ##g2w-include lines     yes
+       width  = 80%                                                          ##g2w-include lines     yes
+       height = 10%                                                          ##g2w-include lines     yes
+   + label {                                                                 ##g2w-include lines     yes
+      text="Select an item with the arrow keys and press Enter to boot."     ##g2w-include lines     yes
+      color  = #*menutextcolor* ##g2w-replace coltext *menutextcolor*        ##g2w-include lines     yes
+   }                                                                         ##g2w-include lines     yes
+   + label {                                                                 ##g2w-include lines     yes
+      text="Press:  'c'  for a grub command line or  'e'  to edit."          ##g2w-include lines     yes
+      color  = #*menutextcolor* ##g2w-replace coltext *menutextcolor*        ##g2w-include lines     yes
+   }                                                                         ##g2w-include lines     yes
+}                                                                            ##g2w-include lines     yes
+                                                                             ##g2w-include style     clock
++ circular_progress {                                                        ##g2w-include style     clock
+   id = "__timeout__"                                                        ##g2w-include style     clock
+   left   = 85%                                                              ##g2w-include style     clock
+   top    = 65%                                                              ##g2w-include style     clock
+   width  = 110                                                              ##g2w-include style     clock
+   height = 110                                                              ##g2w-include style     clock
+   num_ticks       = 30                                                      ##g2w-include style     clock
+   ticks_disappear = true                                                    ##g2w-include style     clock
+   *clockfacestring*                                                         ##g2w-include style     clock
+}                                                                            ##g2w-include style     clock
+                                                                             ##g2w-include style     clock
++ progress_bar     {                                                         ##g2w-include style     clock
+   id = "__timeout__"                                                        ##g2w-include style     clock
+   left   = 81%                                                              ##g2w-include style     clock
+   top    = 85%                                                              ##g2w-include style     clock
+   width  = 4%                                                               ##g2w-include style     clock
+   height = 5%                                                               ##g2w-include style     clock
+   text = "@TIMEOUT_NOTIFICATION_SHORT@"                                     ##g2w-include style     clock
+   text_color = #*menutextcolor* ##g2w-replace colclock *menutextcolor*      ##g2w-include style     clock
+   show_text  = true                                                         ##g2w-include style     clock
+   bar_style = "*"                                                           ##g2w-include style     clock
+   highlight_style = "*"                                                     ##g2w-include style     clock
+}                                                                            ##g2w-include style     clock
+                                                                             ##g2w-include style     progress-bar
++ progress_bar     {                                                         ##g2w-include style     progress-bar
+   id = "__timeout__"                                                        ##g2w-include style     progress-bar
+   left   = 20%                                                              ##g2w-include style     progress-bar
+   top    = 90%                                                              ##g2w-include style     progress-bar
+   width  = 60%                                                              ##g2w-include style     progress-bar
+   height = 3%                                                               ##g2w-include style     progress-bar
+   text = "@TIMEOUT_NOTIFICATION_LONG@"                                      ##g2w-include style     progress-bar
+   text_color = #*menutextcolor* ##g2w-replace coltext *menutextcolor*       ##g2w-include style     progress-bar
+   show_text  = true                                                         ##g2w-include style     progress-bar
+   bar_style       = "common/static/progress_bar_*.png"                      ##g2w-include style     progress-bar
+   highlight_style = "common/static/progress_highlight_*.png"                ##g2w-include style     progress-bar
+}                                                                            ##g2w-include style     progress-bar

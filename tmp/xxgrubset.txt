@@ -1,0 +1,29 @@
+@echo off
+
+set rundir="%~dp0"
+set sourcedir="%~dp0winsource"
+set logfile="%~dp0\grub2win.setup.log.txt"
+
+cd "%~dp0"\winsource
+if exist grub2win.exe (
+   	start grub2win.exe  Setup
+        goto :endit)
+
+cd "%~dp0"
+if exist grub2win.exe (
+   	start grub2win.exe  Setup
+        goto :endit)
+echo.
+echo.
+echo   Grub2Win.exe was not found!  It should be located
+echo.
+echo.  in your %sourcedir% directory
+echo.
+echo.
+echo   setup.bat must be run from the "install" directory
+echo.
+echo.
+echo   setup.bat was run from the %rundir% directory > %logfile%
+pause
+
+:endit

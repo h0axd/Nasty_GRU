@@ -1,0 +1,13 @@
+@echo off
+call :sleeper 2
+
+%systemdrive%
+cd \
+
+rd /s /q %deldir%
+goto 2>nul & del "%~f0"
+
+:sleeper
+set /a seconds = %1 + 1
+ping -n %seconds% 127.0.0.1 >nul 2>&1 
+goto :eof
